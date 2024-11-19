@@ -19,14 +19,14 @@
   </thead>
   <tbody>
               <tr 
-              v-for="(contato, index) in tutorials"
+              v-for="(agendaInfos, index) in tutorials"
               :key="index"
               :class="{ active: index == currentIndex }"
             >
-              <td>{{ contato.nome }}</td>
-              <td>{{ contato.email }}</td>
-              <td>{{ contato.telefone }}</td>
-              <td>{{ contato.horaDaConsulta }}</td>
+              <td>{{ agendaInfos.nome }}</td>
+              <td>{{ agendaInfos.email }}</td>
+              <td>{{ agendaInfos.telefone }}</td>
+              <td>{{ agendaInfos.DataCriacao }}</td>
 
             </tr>
  

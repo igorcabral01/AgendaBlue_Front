@@ -37,15 +37,15 @@
           </thead>
           <tbody>
             <tr 
-              v-for="(contato, index) in tutorials"
+              v-for="(agendaInfos, index) in tutorials"
               :key="index"
               :class="{ active: index == currentIndex }"
-              @click="setActiveTutorial(contato, index)"
+              @click="setActiveTutorial(agendaInfos, index)"
             >
-              <td>{{ contato.id }}</td>
-              <td>{{ contato.nome }}</td>
-              <td>{{ contato.email }}</td>
-              <td>{{ contato.telefone }}</td>
+              <td>{{ agendaInfos.id }}</td>
+              <td>{{ agendaInfos.nome }}</td>
+              <td>{{ agendaInfos.email }}</td>
+              <td>{{ agendaInfos.telefone }}</td>
             </tr>
           </tbody>
         </table>
@@ -67,9 +67,9 @@ export default {
     return {
       tutorials: [],
       currentTutorial: {
-        descricao: '',
-        estilo: '',
-        unidade: ''
+        id: '',
+        nome: '',
+        telefone: ''
       },
       currentIndex: -1,
       submitted: false,
@@ -119,7 +119,7 @@ export default {
     },
 
     DeleteById() {
-      TutorialDataService.delete(this.currentTutorial.id,)
+      TutorialDataService.delete(this.currentTutorial.d,)
         .then(response => {
           this.submitted = true;
           console.log(response.data);
